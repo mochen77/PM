@@ -31,8 +31,8 @@
                   <li><a href="#">职位管理</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                  <li data-toggle="modal" data-target="#myModal" id="zuce"><a href="#">注册</a></li>
-                  <li><a href="#">登录</a></li>
+                  <li data-toggle="modal" data-target="#myModal"><a href="#">登录</a></li>
+                  <li data-toggle="modal" data-target="#login"><a href="#">注册</a></li>
                 </ul>
               </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
@@ -44,18 +44,37 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title">Modal title</h4>
+                  <h4 class="modal-title">登录</h4>
                 </div>
                 <div class="modal-body">
                   <p>One fine body&hellip;</p>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
+                  <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                  <button type="button" class="btn btn-primary">确认</button>
                 </div>
               </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
           </div><!-- /.modal -->
+
+          <!-- 注册模态框 -->
+        <div class="modal fade" id="login">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">注册</h4>
+              </div>
+              <div class="modal-body">
+                <p>One fine body&hellip;</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary">确认</button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
           
     </div>
     <script src="lib/Jquery/jquery-1.12.4.min.js"></script>
