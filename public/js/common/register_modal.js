@@ -22,11 +22,11 @@ RegisterModal.template=`<div class="modal fade" id="registerModal">
       <form class="register-form">
           <div class="form-group">
               <label for="registerUsername">用户名</label>
-              <input type="text" class="form-control" id="registerUsername" placeholder="用户名">
+              <input type="text" class="form-control" name="username" id="registerUsername" placeholder="用户名">
           </div>
           <div class="form-group">
             <label for="registerPassword">密码</label>
-            <input type="password" class="form-control" id="registerPassword" placeholder="密码">
+            <input type="password" class="form-control" name="password" id="registerPassword" placeholder="密码">
           </div>
           <div class="form-group">
               <label for="registerConfPassword">确认密码</label>
@@ -34,7 +34,7 @@ RegisterModal.template=`<div class="modal fade" id="registerModal">
             </div>
           <div class="form-group">
               <label for="registerEmail">邮箱</label>
-              <input type="email" class="form-control" id="registerEmail" placeholder="输入e-email地址">
+              <input type="email" class="form-control" name="email" id="registerEmail" placeholder="输入e-email地址">
           </div>
           <div class="form-group input-group">
 			    <label for="registerCode">验证码</label>
@@ -79,10 +79,11 @@ $.extend(RegisterModal.prototype,{
         })
     },
     registerHandler(){
-        var data=$("register-form").serialize();
+        var data=$(".register-form").serialize();
+        console.log(data);
         $.post("/users/register",data,(resData)=>{
             console.log(resData);
-        }).done(()=>{
+        },"json").done(()=>{
             $("#registerModal").modal("hide");
         });
     }
