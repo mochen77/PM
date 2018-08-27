@@ -12,6 +12,46 @@
 <body>
       <header></header>
 
+      <div class="container">		
+		<button  data-toggle="modal" data-target="#addPosModal" class="btn btn-primary">添加</button>
+      </div>
+      
+      <!-- 添加职位的模态框 -->
+	<div class="modal fade" id="addPosModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">添加职位</h4>
+            </div>
+            <div class="modal-body">
+              <form class="add-position-form">
+                <div class="form-group">
+                  <label for="addLogo">公司LOGO</label>
+                  <input type="file" class="form-control" name="logo" id="addLogo">
+                </div>
+                <div class="form-group">
+                  <label for="addPositionName">职位名称</label>
+                  <input type="text" class="form-control" name="name" id="addPositionName" placeholder="职位名称">
+                </div>
+                <div class="form-group">
+                  <label for="addSalary">薪资</label>
+                  <input type="text" class="form-control" name="salary" id="addSalary" placeholder="薪资">
+                </div>
+                <div class="form-group">
+                  <label for="addCity">工作地点</label>
+                  <input type="text" class="form-control" name="city" id="addCity" placeholder="工作地点">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+              <button type="button" class="btn btn-primary btn-add-pos">添加</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     <script src="/lib/Jquery/jquery-1.12.4.min.js"></script>
     <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="/js/common/login_modal.js"></script>

@@ -1,11 +1,15 @@
 const {User}=require("./model.js");
 
 const UserDao={
+    //保存
     save(userinfo){
         const user=new User(userinfo);
         return user.save();//返回Promise对象
     },
-    find(){},
+    //查找
+    find(userinfo){
+        return User.find(userinfo);
+    },
     updata(){},
     delete(){}
 };

@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\Administrator\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js init
+  C:\Program Files\nodejs\node.exe C:\Users\qianfeng\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js
 
 PATH: 
-  C:\Users\Administrator\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Administrator\bin;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0;C:\Program Files\nodejs;C:\Program Files\VisualSVN Server\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files\TortoiseGit\bin;D:\ruanjian\VSCode\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Roaming\npm;C:\Program Files\MongoDB\Server\3.4\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+  C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\VisualSVN Server\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files\nodejs\;C:\Program Files\TortoiseGit\bin;C:\Program Files\Microsoft VS Code\bin;C:\Users\qianfeng\AppData\Roaming\npm;C:\Users\qianfeng\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\MongoDB\Server\3.4\bin
 
 Yarn version: 
   1.9.4
@@ -14,14 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: Can't answer a question unless a user TTY
-      at ConsoleReporter.question (C:\Users\Administrator\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:88073:59)
-      at Object.<anonymous> (C:\Users\Administrator\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:80839:38)
-      at Generator.next (<anonymous>)
-      at step (C:\Users\Administrator\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:92:30)
-      at C:\Users\Administrator\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:103:13
-      at <anonymous>
-      at process._tickCallback (internal/process/next_tick.js:188:7)
+  Error: ENOENT: no such file or directory, copyfile 'C:\Users\qianfeng\AppData\Local\Yarn\Cache\v2\npm-setprototypeof-1.0.3-66567e37043eeb4f04d91bd658c0cbefb55b8e04\index.js' -> 'E:\xiaominglaoshi\7\Node\day05\projectManagement\node_modules\raw-body\node_modules\setprototypeof\index.js'
 
 npm manifest: 
   {

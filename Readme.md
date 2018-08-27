@@ -28,3 +28,15 @@
     (2)在“数据访问层”继续建立“user_dao.js”实现单个表单模板的增删改查，return一个Promise对象
     (3)将注册的post请求处理单独写入，引入（在业务逻辑层建立了“user_service.js”），用express提供的方法req.body获取需要的数据，与表单中的name相同，将值传入到模板“user_dao.js---model.js”,之后，成功或失败返回一个JSON对象
     (4)数据返回到表示层（数据返回的是JSON的文件类型），有什么样子的变化，前端......
+
+8、密码加密，增加安全性
+    bctypt模板
+	（1）安装  +S
+	（2）引入库
+	（3）引入模板：赋给possword
+
+9、登录
+    (1)创建登录的路由，获取表单的数据。通过用户名查找信息，密码用bcrypt提供的方法“bcrypt.compareSync”进行判断，用户名没有或者密码没有通过返回值；成功返回值
+    (2)表示层判断是否验证成功，成功跳转，失败提示；成功之后注意用“sessionStorage”方法保存用户信息，并更改表现层
+    (3)实现刷新登录：判断是否存在“sessionStorage”，有的话注意要“JSON.parse(sessionStorage.loginUser)”然后进行页面的渲染，和注销将“sessionStorage.removeItem("loginUser")”清除，跳转到首页
+

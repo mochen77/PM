@@ -5,6 +5,7 @@ function Header(){
     this.createDom();
     this.createModal();
     this.addListener();
+    this.load();
 };
 
 Header.template=`<div class="container">
@@ -33,7 +34,7 @@ Header.template=`<div class="container">
                 </ul>
                 <ul class="nav navbar-nav navbar-right login-success hide">
                     <li><a href="#">你好，xxx</a></li>
-                    <li><a href="#">注销</a></li>	        
+                    <li><a href="javascript:void(0)" class="link-logout">注销</a></li>	        
 	            </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
@@ -53,15 +54,34 @@ $.extend(Header.prototype,{
         new LoginModal();
         new RegisterModal();
     },
+    load(){
+        //页面加载时要判断是否有用户登录过，有则显示用户信息及注销链接
+        let user=sessionStorage.loginUser
+        if(user){
+            user=JSON.parse(user);
+            $(".login-success")
+                .removeClass("hide")
+                .find("a:first").text(`你好:${user.username}`);
+            $(".not-login").remove();
+        }
+    },
     //注册事件监听
     addListener(){
-        $(".link-login,.link-register").on("click",this.genCaptchaHandler)
+        //点击登录、注册链接
+        $(".link-login,.link-register").on("click",this.genCaptchaHandler);
+        //点击注销链接
+        $(".link-logout").on("click",this.logoutHandler);
     },
     //生成验证码
     genCaptchaHandler(){
         $.get("/captcha/gencode",(data)=>{
             $(".code-img").html(data);
         },"text");
+    },
+    //注销
+    logoutHandler(){
+        sessionStorage.removeItem("loginUser");
+        window.location.href="/index.html";
     }
 });
 

@@ -15,6 +15,7 @@ LoginModal.template=`<div class="modal fade" id="loginModal">
       <h4 class="modal-title" id="myModalLabel">用户登录</h4>
     </div>
     <div class="modal-body">
+      <div class="alert alert-danger hide login-err">用户名或密码错误</div>
       
       <!-- 表单引用 -->
       <form class="login-form">
@@ -74,10 +75,22 @@ $.extend(LoginModal.prototype,{
       //ajax提交登录处理
       $.post("/users/login",data,(resData)=>{
         console.log(resData);
-      }).done(()=>{
+        if(resData.res_code===1){//登录成功
+          $("#loginModal").modal("hide");
+          //将登录成功的用户信息保存起来，保存到sessionStorage中
+          sessionStorage.loginUser=JSON.stringify(resData.res_body);
+          let user=JSON.parse(sessionStorage.loginUser);
+              $(".login-success")
+                  .removeClass("hide")
+                  .find("a:first").text(`你好:${user.username}`);
+              $(".not-login").remove();
+        }else{
+          $(".login-err").removeClass("hide");
+        }
+      })/*.done(()=>{
         $("#loginModal").modal("hide");
       }).done(()=>{
         $(".login-success").removeClass("hide").siblings(".not-login").remove();
-      });
+      });*/
     }
 });
