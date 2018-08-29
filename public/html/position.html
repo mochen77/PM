@@ -13,7 +13,33 @@
       <header></header>
 
       <div class="container">		
-		<button  data-toggle="modal" data-target="#addPosModal" class="btn btn-primary btn-add-pos">添加</button>
+          <button  data-toggle="modal" data-target="#addPosModal" class="btn btn-primary btn-add-pos">添加</button>
+          
+          <!-- 显示所有职位的表格 -->
+          <div class="container">
+            <table class="table table-stripped table-bordered list-table">
+              <thead>
+                <tr>
+                  <th>序号</th>
+                  <th>公司LOGO</th>
+                  <th>职位名称</th>
+                  <th>薪资</th>
+                  <th>工作地点</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+              </tbody>
+            </table>
+
+            <!-- 分页 -->
+            <nav aria-label="Page navigation">
+              <ul class="pagination">
+                
+              </ul>
+            </nav>
+          </div>
       </div>
       
       <!-- 添加职位的模态框 -->
@@ -54,6 +80,7 @@
 
     <script src="/lib/Jquery/jquery-1.12.4.min.js"></script>
     <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/lib/ejs/ejs.js"></script>
     <script src="/js/common/login_modal.js"></script>
     <script src="/js/common/register_modal.js"></script>
     <script src="/js/common/header.js"></script>

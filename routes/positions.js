@@ -25,5 +25,9 @@ const upload = multer({ storage })
 // http://localhost:3000/positions/add
 router.post("/add", upload.single("logo"), PositionService.add);
 
+/* 按页查询 */ 
+// http://localhost:3000/positions/list?page=2
+router.get("/list",PositionService.listByPage);
+
 
 module.exports = router;
