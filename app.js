@@ -10,7 +10,8 @@ const session = require('express-session');
 //路由中间件
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const captchRouter = require('./routes/captcha');
+const captchaRouter = require('./routes/captcha');
+const positionsRouter = require('./routes/positions');
 
 //创建Express
 const app = express();
@@ -36,7 +37,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/captcha', captchRouter);//访问captcha目录下资源
+app.use('/captcha', captchaRouter);//访问captcha目录下资源
+app.use('/positions', positionsRouter);//访问captcha目录下资源
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

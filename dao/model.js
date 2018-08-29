@@ -11,6 +11,11 @@ const User=mongoose.model("user",{
 });
 
 //职位模型
-//...
+const Position=mongoose.model("position",{
+    name:String,
+    logo:String,
+    salary:Number,
+    city:String
+});
 
-module.exports={User};
+module.exports={User,Position};
