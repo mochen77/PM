@@ -11,4 +11,6 @@ router.post("/login", UserService.login);
 // http://localhost:3000/users/refister
 router.post("/register", UserService.register);
 
+router.get("/logout", UserService.logout);
+
 module.exports = router;

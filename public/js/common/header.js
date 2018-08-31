@@ -80,8 +80,12 @@ $.extend(Header.prototype,{
     },
     //注销
     logoutHandler(){
-        sessionStorage.removeItem("loginUser");
-        window.location.href="/index.html";
+        $.getJSON("/users/logout",(data)=>{
+            if(data.res_body.status){
+                sessionStorage.removeItem("loginUser");
+                window.location.href="/index.html";
+            }
+        })
     }
 });
 

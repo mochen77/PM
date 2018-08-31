@@ -26,7 +26,7 @@ const PositionService={
         let {page}=req.query;
         page=page||1;
         //调用数据库查询方法
-        PositionDao.count()
+        PositionDao
             .count()
             .then((data)=>{
                 PositionDao
